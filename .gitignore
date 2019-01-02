@@ -5,3 +5,6 @@ DS_Store
 
 cwl/tests/test_results/
 
+*.dict
+*.bai
+*.fai
