@@ -13,10 +13,8 @@ RUN conda config --add channels defaults
 RUN conda config --add channels bioconda
 RUN conda config --add channels conda-forge
 
-RUN conda install -y STAR
-RUN conda install -y samtools
-RUN conda install -y tabix
 RUN conda install -y picard
+RUN conda install -y samtools
 RUN conda install -y pytest
 
 # install gatk
@@ -24,10 +22,10 @@ RUN wget https://github.com/broadinstitute/gatk/releases/download/4.0.12.0/gatk-
 RUN unzip gatk-4.0.12.0.zip
 ENV PATH="$PATH:/gatk-4.0.12.0/"
 
-# make sure we have java 8. gatk needs 8
+# make sure we have java 8. gatk sometimes wont work if not java 8
 RUN conda install -y -c cyclus java-jdk
 
-COPY . /gneiss
-WORKDIR /gneiss
+COPY . /amphibolite
+WORKDIR /amphibolite
 
 CMD /bin/bash
