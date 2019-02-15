@@ -31,7 +31,7 @@ outputs:
     type: File?
     outputBinding:
       glob: output.vcf
-label: gneiss_align
+label: amphibolite
 arguments:
   - position: 0
     prefix: '--output-vcf'
